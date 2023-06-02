@@ -22,7 +22,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(int id) {
+    public User getUserById(String id) {
         return userRepository.findById(id).get();
     }
 
@@ -30,12 +30,12 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() { return (List<User>) userRepository.findAll(); }
 
     @Override
-    public void deleteUser(int id) {
+    public void deleteUser(String id) {
         userRepository.deleteById(id);
     }
 
     @Override
-    public boolean isUserExist(int id) {
+    public boolean isUserExist(String id) {
         return userRepository.existsById(id);
     }
 }

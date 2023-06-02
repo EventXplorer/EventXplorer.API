@@ -13,24 +13,23 @@ import java.util.Date;
 @Entity
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private String id;
     private String name;
     private int age;
     private String email;
     private String city;
     private String country;
-    private String url_photo;
+    private String urlphoto;
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
-    private String type_identification;
-    private BigInteger number_identification;
+    private String typeidentification;
+    private BigInteger numberidentification;
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -75,11 +74,11 @@ public class User {
     }
 
     public String getUrlPhoto() {
-        return url_photo;
+        return urlphoto;
     }
 
-    public void setUrlPhoto(String url_photo) {
-        this.url_photo = url_photo;
+    public void setUrlPhoto(String urlphoto) {
+        this.urlphoto = urlphoto;
     }
 
     public Date getBirthday() {
@@ -91,24 +90,24 @@ public class User {
     }
 
     public String getTypeIdentification() {
-        return type_identification;
+        return typeidentification;
     }
 
-    public void setTypeIdentification(String type_identification) {
-        this.type_identification = type_identification;
+    public void setTypeIdentification(String typeidentification) {
+        this.typeidentification = typeidentification;
     }
 
-    public BigInteger getNumberIdentification() {
-        return number_identification;
+    public BigInteger  getNumberIdentification() {
+        return numberidentification;
     }
 
-    public void setNumberIdentification(BigInteger number_identification) {
-        this.number_identification = number_identification;
+    public void setNumberIdentification(BigInteger  numberidentification) {
+        this.numberidentification = numberidentification;
     }
 
     @Override
     public String toString(){
-        return "User [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + ", city=" + city + ", country=" + country + ", urlPhoto=" + url_photo + ", birthday=" + birthday + ", typeIdentification=" + type_identification + ", numberIdentification=" + number_identification + "]";
+        return "User [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + ", city=" + city + ", country=" + country + ", urlPhoto=" + urlphoto + ", birthday=" + birthday + ", typeIdentification=" + typeidentification + ", numberIdentification=" + numberidentification + "]";
     }
 
 }

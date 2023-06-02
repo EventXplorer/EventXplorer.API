@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserServiceController {
     @Autowired
     private UserService userService;
@@ -20,7 +21,7 @@ public class UserServiceController {
     }
 
     @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
-    public ResponseEntity<Object> updateUser(@PathVariable("id") int id, @RequestBody User user) {
+    public ResponseEntity<Object> updateUser(@PathVariable("id") String id, @RequestBody User user) {
         boolean  isExist = userService.isUserExist(id);
         if (!isExist){
             throw  new UserNotFoundException();
@@ -32,7 +33,7 @@ public class UserServiceController {
     }
 
     @RequestMapping(value = "/user/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getUserById(@PathVariable("id") int id) {
+    public ResponseEntity<Object> getUserById(@PathVariable("id") String id) {
         boolean  isExist = userService.isUserExist(id);
         if (!isExist){
             throw  new UserNotFoundException();
@@ -48,7 +49,7 @@ public class UserServiceController {
     }
 
     @RequestMapping(value = "/user/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<Object> deleteUser(@PathVariable("id") int id) {
+    public ResponseEntity<Object> deleteUser(@PathVariable("id") String id) {
         boolean  isExist = userService.isUserExist(id);
         if (!isExist){
             throw  new UserNotFoundException();
