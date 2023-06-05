@@ -14,14 +14,8 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:4200")
 public class EventController {
     @Autowired
-    private EventRepository eventRepository;
-    private UserRepository userRepository;
     private EventService eventService;
 
-    public EventController(EventRepository eventRepository, UserRepository userRepository) {
-        this.eventRepository = eventRepository;
-        this.userRepository = userRepository;
-    }
 
     //EndPoint:http://localhost:4200/event
     //Method: GET
@@ -29,6 +23,7 @@ public class EventController {
     public ResponseEntity<Object> getAllEvents() {
         return new ResponseEntity<>(eventService.getAllEvents(), HttpStatus.OK);
     }
+
     //EndPoint:http://localhost:4200/event
     //Method: POST
     @RequestMapping(value = "/event", method = RequestMethod.POST)
