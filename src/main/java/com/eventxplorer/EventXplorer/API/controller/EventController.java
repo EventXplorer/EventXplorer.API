@@ -1,5 +1,6 @@
 package com.eventxplorer.EventXplorer.API.controller;
 
+import com.eventxplorer.EventXplorer.API.exception.UserNotFoundException;
 import com.eventxplorer.EventXplorer.API.model.Event;
 import com.eventxplorer.EventXplorer.API.repository.EventRepository;
 import com.eventxplorer.EventXplorer.API.repository.UserRepository;
@@ -30,6 +31,19 @@ public class EventController {
     public ResponseEntity<Object> createEvent(@RequestBody Event event) {
         eventService.createEvent(event);
         return new ResponseEntity<>("Event is created successfully with id = " + event.getId(), HttpStatus.CREATED);
+    }
+
+    //EndPoint:http://localhost:8080/event/{id}
+    //Method: GET
+    @RequestMapping(value = "/event/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Object> getEventById(@PathVariable("id") String id) {
+        boolean  isExist = eventService.isEventExist(id);
+        if (!isExist){
+            throw  new UserNotFoundException();
+        }else{
+            Event event = eventService.getEventById(id);
+            return new ResponseEntity<>(event, HttpStatus.OK);
+        }
     }
 
 }
