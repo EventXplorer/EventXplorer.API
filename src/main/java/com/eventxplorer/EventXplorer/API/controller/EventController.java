@@ -17,14 +17,14 @@ public class EventController {
     private EventService eventService;
 
 
-    //EndPoint:http://localhost:4200/event
+    //EndPoint:http://localhost:8080/event
     //Method: GET
     @RequestMapping(value = "/event", method = RequestMethod.GET)
     public ResponseEntity<Object> getAllEvents() {
         return new ResponseEntity<>(eventService.getAllEvents(), HttpStatus.OK);
     }
 
-    //EndPoint:http://localhost:4200/event
+    //EndPoint:http://localhost:8080/event
     //Method: POST
     @RequestMapping(value = "/event", method = RequestMethod.POST)
     public ResponseEntity<Object> createEvent(@RequestBody Event event) {

@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Duration;
+import java.time.LocalTime;
 import java.util.Date;
 
 @Data
@@ -27,7 +28,7 @@ public class Event {
     @Column(name="date", nullable = false)
     private Date date;
     @Column(name="duration", nullable = false)
-    private Duration duration;
+    private LocalTime duration;
     @Column(name="capacity", nullable = false)
     private int capacity;
     @Column(name="amount", nullable = false)
@@ -67,13 +68,6 @@ public class Event {
         this.date = date;
     }
 
-    public Duration getDuration() {
-        return duration;
-    }
-
-    public void setDuration(Duration duration) {
-        this.duration = duration;
-    }
 
     public int getCapacity() {
         return capacity;
@@ -121,6 +115,13 @@ public class Event {
 
     public void setUser(User user) {
         this.user = user;
+    }
+    public LocalTime getDuration() {
+        return duration;
+    }
+
+    public void setDuration(LocalTime duration) {
+        this.duration = duration;
     }
 
     @Override
