@@ -12,7 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://eventxplorer-firebase-au-647bc.web.app")
 public class EventController {
     @Autowired
     private EventService eventService;
