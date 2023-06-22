@@ -8,7 +8,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Date;
 
@@ -22,6 +21,7 @@ public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name="url_photo", nullable = false, length = 100)
     private String urlPhoto;
     @Column(name="title", nullable = false, length = 50)
@@ -45,13 +45,15 @@ public class Event {
     private String city;
     @Column(name="district", nullable = false, length = 50)
     private String district;
+
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false
             , foreignKey = @ForeignKey(name = "FK_USER_ID"))
     private User user;
+
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false
             , foreignKey = @ForeignKey(name = "FK_CATEGORY_ID"))
-    private Categories category;
+    private Category category;
 
 }

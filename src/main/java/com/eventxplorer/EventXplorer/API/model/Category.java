@@ -12,10 +12,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Table(name = "categories")
-public class Categories {
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name="name", nullable = false, length = 50)
     private String name;
 }
