@@ -27,6 +27,11 @@ public class AssistServiceImpl implements AssistService {
         return (List<Assist>) assistRepository.findAll();
     }
 
+    @Override
+    public boolean isAssistExist(String id) {
+        return assistRepository.existsById(id);
+    }
+
 
 
 }

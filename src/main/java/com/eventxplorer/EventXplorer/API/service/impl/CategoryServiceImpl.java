@@ -26,4 +26,9 @@ public class CategoryServiceImpl implements CategoryService {
         return (List<Category>) categoryRepository.findAll();
     }
 
+    @Override
+    public boolean isCategoryExist(String id) {
+        return categoryRepository.existsById(id);
+    }
+
 }

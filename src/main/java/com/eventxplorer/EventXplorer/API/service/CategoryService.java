@@ -9,4 +9,5 @@ public interface CategoryService {
     public abstract Category updateCategory(Category category);
     public abstract List<Category> getAllCategories();
     public abstract Category getCategoryById(String id);
+    public abstract boolean isCategoryExist(String id);
 }
