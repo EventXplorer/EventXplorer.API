@@ -23,12 +23,12 @@ public class Assist {
 
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_USER_ID"))
+            , foreignKey = @ForeignKey(name = "FK_USER_ID_ASSIST"))
     private User user;
 
     @ManyToOne
     @JoinColumn(name="event_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_EVENT_ID"))
+            , foreignKey = @ForeignKey(name = "FK_EVENT_ID_ASSIST"))
     private Event event;
 
     @JsonFormat(pattern = "yyyy-MM-dd")
