@@ -38,5 +38,5 @@ public class Assist {
     @JsonFormat(pattern = "HH:mm")
     @Column(name="confirmed_time", nullable = false)
     private LocalTime confirmedTime;
-    
+
 }
