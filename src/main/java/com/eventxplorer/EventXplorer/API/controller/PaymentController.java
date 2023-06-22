@@ -23,7 +23,7 @@ public class PaymentController {
     //Method: POST
     @RequestMapping(value = "/user/{userId}/payment",method = RequestMethod.POST)
     public ResponseEntity<Object> createPayment(@RequestBody Payment payment,@PathVariable("userId") String userId){
-        validatePayment(payment);
+        //validatePayment(payment);
         payment.setDate(LocalDate.now());
         paymentService.createPayment(payment);
         payment.setStatus_payment(true);
