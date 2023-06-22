@@ -4,8 +4,10 @@ import com.eventxplorer.EventXplorer.API.model.Assist;
 import com.eventxplorer.EventXplorer.API.repository.AssistRepository;
 import com.eventxplorer.EventXplorer.API.service.AssistService;
 import org.springframework.beans.factory.annotation.Autowired;
-import java.util.List;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+@Service
 public class AssistServiceImpl implements AssistService {
     @Autowired
     private AssistRepository assistRepository;

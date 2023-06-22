@@ -1,6 +1,8 @@
 package com.eventxplorer.EventXplorer.API.controller;
 
+import com.eventxplorer.EventXplorer.API.exception.UserNotFoundException;
 import com.eventxplorer.EventXplorer.API.model.Category;
+import com.eventxplorer.EventXplorer.API.model.Event;
 import com.eventxplorer.EventXplorer.API.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,7 +34,7 @@ public class CategoryController {
     public ResponseEntity<Object> getCategoryById(@PathVariable("id") String id) {
         boolean  isExist = categoryService.isCategoryExist(id);
         if (!isExist){
-            return new ResponseEntity<>("Category is not exist with id = " + id, HttpStatus.NOT_FOUND);
+            throw new UserNotFoundException();
         }else{
             Category category = categoryService.getCategoryById(id);
             return new ResponseEntity<>(category, HttpStatus.OK);
