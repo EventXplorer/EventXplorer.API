@@ -26,12 +26,12 @@ public class CategoryController {
     @PostMapping("/category")
     public ResponseEntity<Object> createCategory(@RequestBody Category category) {
         categoryService.createCategory(category);
-        return new ResponseEntity<>("Category is created successfully with name = " + category, HttpStatus.CREATED);
+        return new ResponseEntity<>("Category is created successfully with name = " + category.getId(), HttpStatus.CREATED);
     }
     //EndPoint:http://localhost:8080/category/{id}
     //Method: GET
     @RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getCategoryById(@PathVariable("id") String id) {
+    public ResponseEntity<Object> getCategoryById(@PathVariable("id") Long id) {
         boolean  isExist = categoryService.isCategoryExist(id);
         if (!isExist){
             throw new UserNotFoundException();

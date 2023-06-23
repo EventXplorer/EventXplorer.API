@@ -8,6 +8,6 @@ public interface CategoryService {
     public abstract Category createCategory(Category category);
     public abstract Category updateCategory(Category category);
     public abstract List<Category> getAllCategories();
-    public abstract Category getCategoryById(String id);
-    public abstract boolean isCategoryExist(String id);
+    public abstract Category getCategoryById(Long id);
+    public abstract boolean isCategoryExist(Long id);
 }

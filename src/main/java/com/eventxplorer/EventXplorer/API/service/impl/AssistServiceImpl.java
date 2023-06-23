@@ -21,7 +21,7 @@ public class AssistServiceImpl implements AssistService {
         return assistRepository.save(assist);
     }
     @Override
-    public Assist getAssistById(String id) {
+    public Assist getAssistById(Long id) {
         return assistRepository.findById(id).get();
     }
     @Override
@@ -30,7 +30,7 @@ public class AssistServiceImpl implements AssistService {
     }
 
     @Override
-    public boolean isAssistExist(String id) {
+    public boolean isAssistExist(Long id) {
         return assistRepository.existsById(id);
     }
 

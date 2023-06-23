@@ -29,7 +29,7 @@ public class Payment {
 
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_USER_ID"))
+            , foreignKey = @ForeignKey(name = "FK_USER_ID_PAYMENT"))
     private User user;
 
     public Long getId() {
