@@ -11,7 +11,10 @@ import lombok.NoArgsConstructor;
 import java.time.LocalTime;
 import java.util.Date;
 
-
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "events")
 public class Event {
@@ -45,12 +48,13 @@ public class Event {
 
     @ManyToOne
     @JoinColumn(name="user_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_USER_ID"))
+            , foreignKey = @ForeignKey(name = "FK_USER_ID_EVENT"))
     private User user;
 
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false
             , foreignKey = @ForeignKey(name = "FK_CATEGORY_ID"))
     private Category category;
+
 
 }
