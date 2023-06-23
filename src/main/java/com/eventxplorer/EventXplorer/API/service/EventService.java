@@ -1,6 +1,7 @@
 package com.eventxplorer.EventXplorer.API.service;
 
 import com.eventxplorer.EventXplorer.API.model.Event;
+import com.eventxplorer.EventXplorer.API.model.Payment;
 
 import java.util.List;
 

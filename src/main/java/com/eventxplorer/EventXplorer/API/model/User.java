@@ -2,6 +2,7 @@ package com.eventxplorer.EventXplorer.API.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -22,6 +23,8 @@ public class User {
     private Date birthday;
     private String typeidentification;
     private BigInteger numberidentification;
+    @Column(name="credit_card", nullable = false, length = 16)
+    private String creditcard;
 
     public String getId() {
         return id;
@@ -103,9 +106,17 @@ public class User {
         this.numberidentification = numberidentification;
     }
 
+    public String getCreditcard() {
+        return creditcard;
+    }
+
+    public void setCreditcard(String creditcard) {
+        this.creditcard = creditcard;
+    }
+
     @Override
     public String toString(){
-        return "User [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + ", city=" + city + ", country=" + country + ", urlPhoto=" + urlphoto + ", birthday=" + birthday + ", typeIdentification=" + typeidentification + ", numberIdentification=" + numberidentification + "]";
+        return "User [id=" + id + ", name=" + name + ", age=" + age + ", email=" + email + ", city=" + city + ", country=" + country + ", urlPhoto=" + urlphoto + ", birthday=" + birthday + ", typeIdentification=" + typeidentification + ", numberIdentification=" + numberidentification + ",creditCard=" + creditcard + "]";
     }
 
 }
