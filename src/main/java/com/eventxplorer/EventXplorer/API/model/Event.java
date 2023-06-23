@@ -53,7 +53,7 @@ public class Event {
 
     @ManyToOne
     @JoinColumn(name="category_id", nullable = false
-            , foreignKey = @ForeignKey(name = "FK_CATEGORY_ID"))
+            , foreignKey = @ForeignKey(name = "FK_CATEGORY_ID_EVENT"))
     private Category category;
 
 

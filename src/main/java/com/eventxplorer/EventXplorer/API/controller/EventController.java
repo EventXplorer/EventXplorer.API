@@ -36,7 +36,7 @@ public class EventController {
     //EndPoint:http://localhost:8080/event/{id}
     //Method: GET
     @RequestMapping(value = "/event/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getEventById(@PathVariable("id") String id) {
+    public ResponseEntity<Object> getEventById(@PathVariable("id") Long id) {
         boolean  isExist = eventService.isEventExist(id);
         if (!isExist){
             throw  new UserNotFoundException();

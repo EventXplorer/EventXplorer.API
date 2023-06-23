@@ -21,7 +21,7 @@ public class EventServiceImpl implements EventService {
         return eventRepository.save(event);
     }
     @Override
-    public Event getEventById(String id) {
+    public Event getEventById(Long id) {
         return eventRepository.findById(id).get();
     }
     @Override
@@ -29,11 +29,11 @@ public class EventServiceImpl implements EventService {
         return (List<Event>) eventRepository.findAll();
     }
     @Override
-    public void deleteEvent(String id) {
+    public void deleteEvent(Long id) {
         eventRepository.deleteById(id);
     }
     @Override
-    public boolean isEventExist(String id) {
+    public boolean isEventExist(Long id) {
         return eventRepository.existsById(id);
     }
 
