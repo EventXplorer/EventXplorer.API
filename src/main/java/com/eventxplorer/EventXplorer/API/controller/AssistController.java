@@ -15,20 +15,20 @@ public class AssistController {
     @Autowired
     private AssistService assistService;
 
-    //EndPoint:http://localhost:8080/assist
+    //EndPoint:https://eventxplorer-firebase-au-647bc.web.app/assist
     //Method: GET
     @RequestMapping(value = "/assist", method = RequestMethod.GET)
     public ResponseEntity<Object> getAllAssists() {
         return new ResponseEntity<>(assistService.getAllAssists(), HttpStatus.OK);
     }
-    //EndPoint:http://localhost:8080/assist
+    //EndPoint:https://eventxplorer-firebase-au-647bc.web.app/assist
     //Method: POST
     @PostMapping("/assist")
     public ResponseEntity<Object> createAssist(@RequestBody Assist assist) {
         assistService.createAssist(assist);
-        return new ResponseEntity<>("Assist is created successfully with name = " + assist.getId(), HttpStatus.CREATED);
+        return new ResponseEntity<>("Assist is created successfully with id = " + assist.getId(), HttpStatus.CREATED);
     }
-    //EndPoint:http://localhost:8080/assist/{id}
+    //EndPoint:https://eventxplorer-firebase-au-647bc.web.app/assist/{id}
     //Method: GET
     @RequestMapping(value = "/assist/{id}", method = RequestMethod.GET)
     public ResponseEntity<Object> getAssistById(@PathVariable("id") Long id) {
