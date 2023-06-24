@@ -56,4 +56,5 @@ public class Event {
             , foreignKey = @ForeignKey(name = "FK_CATEGORY_ID_EVENT"))
     private Category category;
 
+
 }
