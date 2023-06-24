@@ -26,12 +26,12 @@ public class AssistController {
     @PostMapping("/assist")
     public ResponseEntity<Object> createAssist(@RequestBody Assist assist) {
         assistService.createAssist(assist);
-        return new ResponseEntity<>("Assist is created successfully with name = " + assist, HttpStatus.CREATED);
+        return new ResponseEntity<>("Assist is created successfully with name = " + assist.getId(), HttpStatus.CREATED);
     }
     //EndPoint:http://localhost:8080/assist/{id}
     //Method: GET
     @RequestMapping(value = "/assist/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Object> getAssistById(@PathVariable("id") String id) {
+    public ResponseEntity<Object> getAssistById(@PathVariable("id") Long id) {
         boolean  isExist = assistService.isAssistExist(id);
         if (!isExist){
             throw  new UserNotFoundException();

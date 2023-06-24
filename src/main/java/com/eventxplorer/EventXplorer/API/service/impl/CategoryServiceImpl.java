@@ -20,7 +20,7 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryRepository.save(category);
     }
     @Override
-    public Category getCategoryById(String id) {
+    public Category getCategoryById(Long id) {
         return categoryRepository.findById(id).get();
     }
     @Override
@@ -29,7 +29,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public boolean isCategoryExist(String id) {
+    public boolean isCategoryExist(Long id) {
         return categoryRepository.existsById(id);
     }
 

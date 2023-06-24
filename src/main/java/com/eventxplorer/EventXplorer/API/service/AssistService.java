@@ -9,8 +9,8 @@ public interface AssistService {
     public abstract Assist createAssist(Assist assist);
     public abstract Assist updateAssist(Assist assist);
     public abstract List<Assist> getAllAssists();
-    public abstract Assist getAssistById(String id);
-    public abstract boolean isAssistExist(String id);
+    public abstract Assist getAssistById(Long id);
+    public abstract boolean isAssistExist(Long id);
 
 }
 
